@@ -23,7 +23,12 @@ The request body must be a JSON object containing the following fields:
   "email": "string (required, must be a valid email format)",
   "password": "string (required, min: 6 characters)"
 }
+```
 
+### Response 
+## Status Code : `201 Created`
+
+```json
 {
   "token": "string (JWT token)",
   "user": {
@@ -34,7 +39,12 @@ The request body must be a JSON object containing the following fields:
     "email": "string"
   }
 }
+```
 
+### Error Responses 
+## status Code: `400 Bad Request `
+
+```json
 {
   "errors": [
     {
@@ -44,11 +54,18 @@ The request body must be a JSON object containing the following fields:
     }
   ]
 }
+```
 
+### Status Code : `500 Internal Server Error`
+```json
 {
   "error": "Error message"
 }
+```
 
+### Example Request 
+
+```json
 curl -X POST http://yourapi.com/users/register \
 -H "Content-Type: application/json" \
 -d '{
@@ -59,7 +76,11 @@ curl -X POST http://yourapi.com/users/register \
   "email": "john.doe@example.com",
   "password": "securepassword"
 }'
+```
 
+### Example Success Response 
+
+```json
 {
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
   "user": {
@@ -70,3 +91,4 @@ curl -X POST http://yourapi.com/users/register \
     "email": "john.doe@example.com"
   }
 }
+```
