@@ -190,3 +190,106 @@ curl -X POST http://yourapi.com/users/login \
 }
 ```
 
+# User Profile API
+## Endpoint: `users/profile`
+### Description 
+ The `/users/profile` endpoint allows authenticated users to retrieve their profile information.
+
+### Request Method
+`GET`
+
+### Request Headers
+- `Authorization: Bearer <token>`(required)
+
+### Response
+Status Code : `200 OK`
+
+```json
+{
+  "fullName": {
+    "firstName": "string",
+    "lastName": "string"
+  },
+  "email": "string"
+}
+```
+
+### Error Responses
+Status Code : `401 Unauthorized`
+
+```json
+{
+  "message": "Unauthorized"
+}
+```
+
+Status Code : `500 Internal Server Error `
+```json
+{
+  "error": "Error message"
+}
+```
+### Example Request 
+```json
+curl -X GET http://yourapi.com/users/profile \
+-H "Authorization: Bearer <token>"
+```
+
+### Example Success Ressponse 
+```json
+{
+  "fullName": {
+    "firstName": "John",
+    "lastName": "Doe"
+  },
+  "email": "john.doe@example.com"
+}
+```
+
+# User Logout API
+## EndPoint : `/users/logout`
+### Description
+The `/users/logout` endpoint allows authenticated users to log out and invalidate their session.
+
+
+## Request Method
+`Get`
+
+### Request Headers
+`Authorization: Bearer <token>` (required)
+
+### Response 
+Status Code : `200 Ok`
+```json
+{
+  "message": "Logged out successfully"
+}
+```
+
+### Error Response 
+Status Code : `401 Unauthorized`
+
+```json
+{
+  "message": "Unauthorized"
+}
+```
+
+Status Code : `500  Internal Server Error`
+```json
+{
+  "error": "Error message"
+}
+```
+
+### Example Request 
+```json
+curl -X GET http://yourapi.com/users/logout \
+-H "Authorization: Bearer <token>"
+```
+### Example Success Response
+```json
+{
+  "message": "Logged out successfully"
+}
+```
