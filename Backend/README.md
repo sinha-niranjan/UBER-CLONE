@@ -26,7 +26,7 @@ The request body must be a JSON object containing the following fields:
 ```
 
 ### Response 
-## Status Code : `201 Created`
+Status Code : `201 Created`
 
 ```json
 {
@@ -42,7 +42,7 @@ The request body must be a JSON object containing the following fields:
 ```
 
 ### Error Responses 
-## status Code: `400 Bad Request `
+Status Code: `400 Bad Request `
 
 ```json
 {
@@ -171,7 +171,7 @@ curl -X POST http://yourapi.com/users/login \
 -H "Content-Type: application/json" \
 -d '{
   "email": "john.doe@example.com",
-  "password": "securepassword"
+  "password": "securePassword"
 }'
 ```
 
@@ -235,7 +235,7 @@ curl -X GET http://yourapi.com/users/profile \
 -H "Authorization: Bearer <token>"
 ```
 
-### Example Success Ressponse 
+### Example Success Response 
 ```json
 {
   "fullName": {
