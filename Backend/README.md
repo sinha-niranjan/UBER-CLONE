@@ -347,7 +347,7 @@ Status Code : `400 Bad Request `
 }
 ```
 
-Status Code :` 500 Internal Server Error`
+Status Code :`500 Internal Server Error`
 ```json
 {
   "error": "Error message"
