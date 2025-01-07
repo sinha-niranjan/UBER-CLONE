@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 const CaptainLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [userData, setUserData] = useState("");
+  const [captainData, setCaptainData] = useState("");
 
   const submitHandler = (e) => {
     e.preventDefault();
-    setUserData({
+    setCaptainData({
       email: email,
       password: password,
     });
@@ -49,16 +49,19 @@ const CaptainLogin = () => {
             Login
           </button>
           <p className="text-center ">
-            You don't have an account ?{" "}
-            <Link to={"/signup"} className="text-blue-600 ">
-              Create new Account{" "}
+            Already Joined the company ?{" "}
+            <Link to={"/captain-signup"} className="text-blue-600 ">
+              Register as a captain{" "}
             </Link>
           </p>
         </form>
       </div>
       <div>
-        <Link to={"/captain-login"}  className="bg-[#10b461] flex items-center justify-center text-[#fff] font-semibold  mb-7 rounded px-4 py-2 w-full   text-lg placeholder:text-base ">
-          Sign in as Captain{" "}
+        <Link
+          to={"/login"}
+          className="bg-[#fc621b] flex items-center justify-center text-[#fff] font-semibold  mb-7 rounded px-4 py-2 w-full   text-lg placeholder:text-base "
+        >
+          Sign in as User{" "}
         </Link>
       </div>
     </div>
