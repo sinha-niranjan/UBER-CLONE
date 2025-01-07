@@ -50,14 +50,17 @@ const UserLogin = () => {
           </button>
           <p className="text-center ">
             You don't have an account ?{" "}
-            <Link to={"/signup"} className="text-blue-600 ">
+            <Link to={"/signup"} className="text-blue-600 font-semibold">
               Create new Account{" "}
             </Link>
           </p>
         </form>
       </div>
       <div>
-        <Link to={"/captain-login"}  className="bg-[#10b461] flex items-center justify-center text-[#fff] font-semibold  mb-7 rounded px-4 py-2 w-full   text-lg placeholder:text-base ">
+        <Link
+          to={"/captain-login"}
+          className="bg-[#10b461] flex items-center justify-center text-[#fff] font-semibold  mb-7 rounded px-4 py-2 w-full   text-lg placeholder:text-base "
+        >
           Sign in as Captain{" "}
         </Link>
       </div>

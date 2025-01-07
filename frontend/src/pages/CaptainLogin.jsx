@@ -50,7 +50,10 @@ const CaptainLogin = () => {
           </button>
           <p className="text-center ">
             Already Joined the company ?{" "}
-            <Link to={"/captain-signup"} className="text-blue-600 ">
+            <Link
+              to={"/captain-signup"}
+              className=" font-semibold text-blue-600 "
+            >
               Register as a captain{" "}
             </Link>
           </p>
