@@ -78,7 +78,7 @@ const UserSignUp = () => {
             }}
           />
           <button className="bg-[#111] text-[#fff] font-semibold  mb-3 rounded px-4 py-2 w-full   text-lg placeholder:text-base ">
-            Sign up
+            Create account
           </button>
           <p className="text-center ">
             Already have an account ?{" "}
