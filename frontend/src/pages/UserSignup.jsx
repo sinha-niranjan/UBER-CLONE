@@ -78,7 +78,7 @@ const UserSignUp = () => {
             }}
           />
           <button className="bg-[#111] text-[#fff] font-semibold  mb-3 rounded px-4 py-2 w-full   text-lg placeholder:text-base ">
-            Login
+            Sign up
           </button>
           <p className="text-center ">
             Already have an account ?{" "}
@@ -90,9 +90,9 @@ const UserSignUp = () => {
       </div>
       <div>
         <p className="text-[12px] leading-tight">
-          By proceeding, you consent to get calls, whatsApp or SMS messages,
-          including by automated from Uber and its affiliates to the number
-          provided.
+          This site is protected by reCAPTCHA and the{" "}
+          <span className="underline">Google Privacy</span> Policy and{" "}
+          <span className="underline">Terms of Service apply</span> .
         </p>
       </div>
     </div>
