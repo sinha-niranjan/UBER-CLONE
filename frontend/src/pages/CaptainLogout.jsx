@@ -14,7 +14,7 @@ const CaptainLogout = () => {
             headers: {
               Authorization: `Bearer ${token}`,
             },
-          }
+          },
         );
 
         if (response.status === 200) {

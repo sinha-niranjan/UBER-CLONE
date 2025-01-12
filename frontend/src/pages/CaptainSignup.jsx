@@ -37,7 +37,7 @@ const CaptainSignup = () => {
     try {
       const response = await axios.post(
         `${import.meta.env.VITE_BASE_URL}/captain/register`,
-        captainData
+        captainData,
       );
 
       if (response.status === 201) {
@@ -61,22 +61,22 @@ const CaptainSignup = () => {
     setVehicleType("");
   };
   return (
-    <div className="p-7 flex flex-col justify-between min-h-screen">
+    <div className="flex min-h-screen flex-col justify-between p-7">
       <div>
-        <img className="w-16 mb-10" src="captain_logo.png" alt="" />
+        <img className="mb-10 w-16" src="captain_logo.png" alt="" />
         <form
           onSubmit={(e) => {
             submitHandler(e);
           }}
           className="mb-10"
         >
-          <h3 className="text-base font-medium mb-2">What's your name </h3>
-          <div className="flex gap-4 mb-5">
+          <h3 className="mb-2 text-base font-medium">What's your name </h3>
+          <div className="mb-5 flex gap-4">
             <input
               type="text"
               required
               placeholder="First name"
-              className="bg-[#eeeeee]  rounded px-4 py-2 w-1/2 border  text-base placeholder:text-sm "
+              className="w-1/2 rounded border bg-[#eeeeee] px-4 py-2 text-base placeholder:text-sm"
               value={firstName}
               onChange={(e) => {
                 setFirstName(e.target.value);
@@ -86,7 +86,7 @@ const CaptainSignup = () => {
               type="text"
               required
               placeholder="Last name"
-              className="bg-[#eeeeee]  rounded px-4 py-2 w-1/2 border text-base placeholder:text-sm "
+              className="w-1/2 rounded border bg-[#eeeeee] px-4 py-2 text-base placeholder:text-sm"
               value={lastName}
               onChange={(e) => {
                 setLastName(e.target.value);
@@ -94,34 +94,34 @@ const CaptainSignup = () => {
             />
           </div>
 
-          <h3 className="text-base font-medium mb-2">What's your email </h3>
+          <h3 className="mb-2 text-base font-medium">What's your email </h3>
           <input
             type="email"
             required
             placeholder="email@example.com"
-            className="bg-[#eeeeee] mb-5 rounded px-4 py-2 w-full border  text-base placeholder:text-sm  "
+            className="mb-5 w-full rounded border bg-[#eeeeee] px-4 py-2 text-base placeholder:text-sm"
             value={email}
             onChange={(e) => {
               setEmail(e.target.value);
             }}
           />
-          <h3 className="text-base font-medium mb-2">Enter Password</h3>
+          <h3 className="mb-2 text-base font-medium">Enter Password</h3>
           <input
             type="password"
             placeholder="Password"
-            className="bg-[#eeeeee] mb-5 rounded px-4 py-2 w-full border  text-base placeholder:text-sm  "
+            className="mb-5 w-full rounded border bg-[#eeeeee] px-4 py-2 text-base placeholder:text-sm"
             value={password}
             onChange={(e) => {
               setPassword(e.target.value);
             }}
           />
-          <h3 className="text-base font-medium mb-2"> Vehicle Information</h3>
-          <div className="flex gap-4 mb-3">
+          <h3 className="mb-2 text-base font-medium"> Vehicle Information</h3>
+          <div className="mb-3 flex gap-4">
             <input
               type="text"
               required
               placeholder="Vehicle Color"
-              className="bg-[#eeeeee]  rounded px-4 py-2 w-1/2 border  text-base placeholder:text-sm "
+              className="w-1/2 rounded border bg-[#eeeeee] px-4 py-2 text-base placeholder:text-sm"
               value={vehicleColor}
               onChange={(e) => {
                 setVehicleColor(e.target.value);
@@ -131,19 +131,19 @@ const CaptainSignup = () => {
               type="text"
               required
               placeholder="Vehicle Plate"
-              className="bg-[#eeeeee]  rounded px-4 py-2 w-1/2 border  text-base placeholder:text-sm "
+              className="w-1/2 rounded border bg-[#eeeeee] px-4 py-2 text-base placeholder:text-sm"
               value={vehiclePlate}
               onChange={(e) => {
                 setVehiclePlate(e.target.value);
               }}
             />
           </div>
-          <div className="flex gap-4 mb-5">
+          <div className="mb-5 flex gap-4">
             <input
               type="number"
               required
               placeholder="Vehicle Capacity"
-              className="bg-[#eeeeee]  rounded px-4 py-2 w-1/2 border  text-base placeholder:text-sm "
+              className="w-1/2 rounded border bg-[#eeeeee] px-4 py-2 text-base placeholder:text-sm"
               value={vehicleCapacity}
               onChange={(e) => {
                 setVehicleCapacity(e.target.value);
@@ -151,53 +151,50 @@ const CaptainSignup = () => {
             />{" "}
             <select
               required
-              className="bg-[#eeeeee]  rounded px-4 py-2 w-1/2 border  text-base placeholder:text-sm "
+              className="w-1/2 rounded border bg-[#eeeeee] px-4 py-2 text-base placeholder:text-sm"
               value={vehicleType}
               onChange={(e) => setVehicleType(e.target.value)}
             >
               <option
                 value={""}
                 disabled
-                className="text-gray-400 hover:text-gray-700 transition-all duration-300 ease-in-out"
+                className="text-gray-400 transition-all duration-300 ease-in-out hover:text-gray-700"
               >
                 Select Vehicle Type
               </option>
               <option
-                className="hover:bg-blue-100 hover:text-blue-700 transition-colors duration-300"
+                className="transition-colors duration-300 hover:bg-blue-100 hover:text-blue-700"
                 value={"car"}
               >
                 Car
               </option>
               <option
-                className="hover:bg-blue-100 hover:text-blue-700 transition-colors duration-300"
+                className="transition-colors duration-300 hover:bg-blue-100 hover:text-blue-700"
                 value={"auto"}
               >
                 Auto
               </option>
               <option
-                className="hover:bg-blue-100 hover:text-blue-700 transition-colors duration-300"
+                className="transition-colors duration-300 hover:bg-blue-100 hover:text-blue-700"
                 value={"moto"}
               >
                 Moto
               </option>
             </select>
           </div>
-          <button className="bg-[#111] text-[#fff] font-semibold  mb-3 rounded px-4 py-2 w-full   text-lg placeholder:text-base ">
+          <button className="mb-3 w-full rounded bg-[#111] px-4 py-2 text-lg font-semibold text-[#fff] placeholder:text-base">
             Create Captain Account
           </button>
-          <p className="text-center ">
+          <p className="text-center">
             Already have an account as Captain ?{" "}
-            <Link
-              to={"/captain-login"}
-              className="text-blue-600 font-semibold "
-            >
+            <Link to={"/captain-login"} className="font-semibold text-blue-600">
               Login here as Captain{" "}
             </Link>
           </p>
         </form>
       </div>
       <div>
-        <p className="text-[12px] leading-tight ">
+        <p className="text-[12px] leading-tight">
           This site is protected by reCAPTCHA and the{" "}
           <span className="underline">Google Privacy</span> Policy and{" "}
           <span className="underline">Terms of Service apply</span> .

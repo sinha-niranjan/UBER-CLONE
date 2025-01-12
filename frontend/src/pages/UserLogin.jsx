@@ -19,7 +19,7 @@ const UserLogin = () => {
     };
     const response = await axios.post(
       `${import.meta.env.VITE_BASE_URL}/user/login`,
-      data
+      data,
     );
 
     if (response.status == 200) {
@@ -33,15 +33,15 @@ const UserLogin = () => {
     setPassword("");
   };
   return (
-    <div className="p-7 flex flex-col justify-between min-h-screen">
+    <div className="flex min-h-screen flex-col justify-between p-7">
       <div>
-        <img className="w-16 mb-10" src="logo.png" alt="" />
+        <img className="mb-10 w-16" src="logo.png" alt="" />
         <form
           onSubmit={(e) => {
             submitHandler(e);
           }}
         >
-          <h3 className="text-lg font-medium mb-2">What's your email </h3>
+          <h3 className="mb-2 text-lg font-medium">What's your email </h3>
           <input
             type="email"
             value={email}
@@ -50,9 +50,9 @@ const UserLogin = () => {
             }}
             required
             placeholder="email@example.com"
-            className="bg-[#eeeeee] mb-7 rounded px-4 py-2 w-full border  text-lg placeholder:text-base "
+            className="mb-7 w-full rounded border bg-[#eeeeee] px-4 py-2 text-lg placeholder:text-base"
           />
-          <h3 className="text-lg font-medium mb-2">Enter Password</h3>
+          <h3 className="mb-2 text-lg font-medium">Enter Password</h3>
           <input
             value={password}
             onChange={(e) => {
@@ -60,14 +60,14 @@ const UserLogin = () => {
             }}
             type="password"
             placeholder="password"
-            className="bg-[#eeeeee] mb-7 rounded px-4 py-2 w-full border  text-lg placeholder:text-base "
+            className="mb-7 w-full rounded border bg-[#eeeeee] px-4 py-2 text-lg placeholder:text-base"
           />
-          <button className="bg-[#111] text-[#fff] font-semibold  mb-3 rounded px-4 py-2 w-full   text-lg placeholder:text-base ">
+          <button className="mb-3 w-full rounded bg-[#111] px-4 py-2 text-lg font-semibold text-[#fff] placeholder:text-base">
             Login
           </button>
-          <p className="text-center ">
+          <p className="text-center">
             You don't have an account ?{" "}
-            <Link to={"/signup"} className="text-blue-600 font-semibold">
+            <Link to={"/signup"} className="font-semibold text-blue-600">
               Create new Account{" "}
             </Link>
           </p>
@@ -76,7 +76,7 @@ const UserLogin = () => {
       <div>
         <Link
           to={"/captain-login"}
-          className="bg-[#10b461] flex items-center justify-center text-[#fff] font-semibold  mb-7 rounded px-4 py-2 w-full   text-lg placeholder:text-base "
+          className="mb-7 flex w-full items-center justify-center rounded bg-[#10b461] px-4 py-2 text-lg font-semibold text-[#fff] placeholder:text-base"
         >
           Sign in as Captain{" "}
         </Link>

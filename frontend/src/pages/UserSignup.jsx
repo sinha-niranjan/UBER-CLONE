@@ -26,7 +26,7 @@ const UserSignUp = () => {
 
     const response = await axios.post(
       `${import.meta.env.VITE_BASE_URL}/user/register`,
-      newUser
+      newUser,
     );
 
     if (response.status === 201) {
@@ -42,21 +42,21 @@ const UserSignUp = () => {
     setPassword("");
   };
   return (
-    <div className="p-7 flex flex-col justify-between min-h-screen">
+    <div className="flex min-h-screen flex-col justify-between p-7">
       <div>
-        <img className="w-16 mb-10" src="logo.png" alt="" />
+        <img className="mb-10 w-16" src="logo.png" alt="" />
         <form
           onSubmit={(e) => {
             submitHandler(e);
           }}
         >
-          <h3 className="text-base font-medium mb-2">What's your name </h3>
-          <div className="flex gap-4 mb-5">
+          <h3 className="mb-2 text-base font-medium">What's your name </h3>
+          <div className="mb-5 flex gap-4">
             <input
               type="text"
               required
               placeholder="First name"
-              className="bg-[#eeeeee]  rounded px-4 py-2 w-1/2 border  text-base placeholder:text-sm "
+              className="w-1/2 rounded border bg-[#eeeeee] px-4 py-2 text-base placeholder:text-sm"
               value={firstName}
               onChange={(e) => {
                 setFirstName(e.target.value);
@@ -66,7 +66,7 @@ const UserSignUp = () => {
               type="text"
               required
               placeholder="Last name"
-              className="bg-[#eeeeee]  rounded px-4 py-2 w-1/2 border text-base placeholder:text-sm "
+              className="w-1/2 rounded border bg-[#eeeeee] px-4 py-2 text-base placeholder:text-sm"
               value={lastName}
               onChange={(e) => {
                 setLastName(e.target.value);
@@ -74,33 +74,33 @@ const UserSignUp = () => {
             />
           </div>
 
-          <h3 className="text-base font-medium mb-2">What's your email </h3>
+          <h3 className="mb-2 text-base font-medium">What's your email </h3>
           <input
             type="email"
             required
             placeholder="email@example.com"
-            className="bg-[#eeeeee] mb-5 rounded px-4 py-2 w-full border  text-base placeholder:text-sm  "
+            className="mb-5 w-full rounded border bg-[#eeeeee] px-4 py-2 text-base placeholder:text-sm"
             value={email}
             onChange={(e) => {
               setEmail(e.target.value);
             }}
           />
-          <h3 className="text-base font-medium mb-2">Enter Password</h3>
+          <h3 className="mb-2 text-base font-medium">Enter Password</h3>
           <input
             type="password"
             placeholder="Password"
-            className="bg-[#eeeeee] mb-5 rounded px-4 py-2 w-full border  text-base placeholder:text-sm  "
+            className="mb-5 w-full rounded border bg-[#eeeeee] px-4 py-2 text-base placeholder:text-sm"
             value={password}
             onChange={(e) => {
               setPassword(e.target.value);
             }}
           />
-          <button className="bg-[#111] text-[#fff] font-semibold  mb-3 rounded px-4 py-2 w-full   text-lg placeholder:text-base ">
+          <button className="mb-3 w-full rounded bg-[#111] px-4 py-2 text-lg font-semibold text-[#fff] placeholder:text-base">
             Create account
           </button>
-          <p className="text-center ">
+          <p className="text-center">
             Already have an account ?{" "}
-            <Link to={"/login"} className="text-blue-600 font-semibold ">
+            <Link to={"/login"} className="font-semibold text-blue-600">
               Login here{" "}
             </Link>
           </p>

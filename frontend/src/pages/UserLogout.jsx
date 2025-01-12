@@ -14,7 +14,7 @@ const UserLogout = () => {
             headers: {
               Authorization: `Bearer ${token}`,
             },
-          }
+          },
         );
 
         if (response.status === 200) {
