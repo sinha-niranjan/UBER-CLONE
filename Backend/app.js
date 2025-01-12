@@ -18,6 +18,6 @@ app.get("/", (req, res) => {
   res.send("Hello, World!");
 });
 app.use("/user", userRoutes);
-app.use("/captains", captainRoutes);
+app.use("/captain", captainRoutes);
 
 module.exports = app;
