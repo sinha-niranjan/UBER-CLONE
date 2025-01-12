@@ -7,7 +7,6 @@ const captainModel = require("../models/captain.model.js");
 module.exports.authUser = async (req, res, next) => {
   const token = req.cookies.token || req.headers.authorization?.split(" ")[1];
   if (!token) return res.status(401).json({ message: "Unauthorized" });
-
   const isBlacklisted = await blacklistTokenModel.findOne({ token: token });
 
   if (isBlacklisted) {
@@ -42,6 +41,6 @@ module.exports.authCaptain = async (req, res, next) => {
     req.captain = captain;
     return next();
   } catch (error) {
-    return res.status(500).json(error);
+    return res.status(401).json({ message: "Unauthorized" });
   }
 };

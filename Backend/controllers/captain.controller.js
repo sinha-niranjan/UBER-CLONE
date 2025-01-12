@@ -50,14 +50,12 @@ module.exports.loginCaptain = async (req, res) => {
     const captain = await captainModel.findOne({ email }).select("+password");
 
     if (!captain) {
-      console.log("captain not fount");
       return res.status(401).json({ message: "Invalid email or password" });
     }
 
     const isMatch = await captain.comparePassword(password);
 
     if (!isMatch) {
-      console.log("password not match");
       return res.status(401).json({ message: "Invalid email or password" });
     }
 
@@ -71,7 +69,9 @@ module.exports.loginCaptain = async (req, res) => {
 };
 
 module.exports.getCaptainProfile = async (req, res) => {
-  return res.status(200).json({ captain: req.captain });
+  if (req?.captain) return res.status(200).json({ captain: req.captain });
+
+  return res.status(401).json({ message: "Unauthorized" });
 };
 
 module.exports.logoutCaptain = async (req, res) => {

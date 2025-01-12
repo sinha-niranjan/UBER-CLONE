@@ -14,6 +14,7 @@ const CaptainProtectedWrapper = ({ children }) => {
       navigate("/captain-login");
     }
     setIsLoading(true);
+    if(token)
     axios
       .get(`${import.meta.env.VITE_BASE_URL}/captain/profile`, {
         headers: {
@@ -22,11 +23,11 @@ const CaptainProtectedWrapper = ({ children }) => {
       })
       .then((response) => {
         if (response.status === 200) {
-          setCaptain(response.data.captain);
+          setCaptain(response.data?.captain);
         }
       })
       .catch((error) => {
-        console.log(error);
+        console.log(" c : ", error);
         localStorage.removeItem("token");
         navigate("/captain-login");
       })

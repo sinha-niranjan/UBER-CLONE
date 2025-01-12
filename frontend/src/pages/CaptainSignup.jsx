@@ -48,7 +48,7 @@ const CaptainSignup = () => {
         navigate("/captain-home");
       }
     } catch (error) {
-      console.log("error : ", error);
+      console.log(" captain error : ", error);
     }
 
     setFirstName("");
