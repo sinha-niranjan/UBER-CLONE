@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const LocationSearchPanel = () => {
-  return (
-    <div>LocationSearchPanel</div>
-  )
-}
+  return <div>LocationSearchPane</div>;
+};
 
-export default LocationSearchPanel
+export default LocationSearchPanel;

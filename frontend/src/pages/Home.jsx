@@ -1,6 +1,5 @@
-import React, { useRef, useState } from "react";
-import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import React, { useEffect, useRef, useState } from "react";
 import "remixicon/fonts/remixicon.css";
 import LocationSearchPanel from "../components/LocationSearchPanel";
 
@@ -15,23 +14,32 @@ const Home = () => {
     console.log("Form submitted");
   };
 
-  useGSAP(
-    function () {
+  useEffect(() => {
+    if (panelOpen) {
       gsap.to(panelRef.current, {
-        height: panelOpen ? "70%" : "0%",
-        // opacity: panelOpen ? 1 : 0,
+        height: "70%",
+        padding: 24,
+        duration: 0.5, // Add duration
+        ease: "power2.out", // Smooth easing
       });
+      gsap.to(panelCloseRef.current, {
+        opacity: 1,
+        duration: 0.3,
+      });
+    } else {
+      gsap.to(panelRef.current, {
+        height: "0%",
+        padding: 0,
+        duration: 0.5,
+        ease: "power2.in", // Smooth easing
+      });
+      gsap.to(panelCloseRef.current, {
+        opacity: 0,
+        duration: 0.3,
+      });
+    }
+  }, [panelOpen]);
 
-      panelOpen
-        ? gsap.to(panelCloseRef.current, {
-            opacity: 1,
-          })
-        : gsap.to(panelCloseRef.current, {
-            opacity: 0,
-          });
-    },
-    [panelOpen],
-  );
   return (
     <div className="relative h-screen">
       <img className="absolute left-5 top-5 w-16" src="logo.png" alt="logo" />
@@ -43,7 +51,7 @@ const Home = () => {
           alt="map gif"
         />
       </div>
-      <div className="absolute top-0 flex h-screen w-full flex-col justify-end">
+      <div className="absolute top-0 flex h-screen w-full flex-col justify-end overflow-hidden">
         <div className="relative h-[30%] bg-white p-6">
           <h5
             ref={panelCloseRef}
@@ -77,7 +85,7 @@ const Home = () => {
             />
           </form>
         </div>
-        <div ref={panelRef} className="h-0 bg-red-400">
+        <div ref={panelRef} className="h-0 bg-white">
           <LocationSearchPanel />
         </div>
       </div>
