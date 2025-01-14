@@ -17,7 +17,7 @@ const VehiclePanel = ({ setVehiclePanelOpen, setConfirmRidePanel }) => {
         onClick={() => setConfirmRidePanel((prev) => !prev)}
         className="mb-2 flex w-full items-center justify-between rounded-xl border-2 border-gray-300 bg-white p-3 active:border-black"
       >
-        <img className="h-12" src="car.webp" alt="car" />
+        <img className="h-12" src="car_bg_.png" alt="car" />
         <div className="w-1/2">
           <h4 className="text-sm font-semibold">
             UberGo{" "}
