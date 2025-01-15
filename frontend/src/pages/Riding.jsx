@@ -4,7 +4,10 @@ import { Link } from "react-router-dom";
 const Riding = () => {
   return (
     <div className="h-screen">
-      <Link to={"/home"} className="fixed right-2 top-2 block flex h-10 w-10 items-center justify-center rounded-full bg-white">
+      <Link
+        to={"/home"}
+        className="fixed right-2 top-2 flex h-10 w-10 items-center justify-center rounded-full bg-white"
+      >
         <i className="ri-home-5-line text-lg font-medium"></i>
       </Link>
       <div className="h-1/2">
