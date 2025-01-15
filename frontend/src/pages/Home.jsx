@@ -5,6 +5,7 @@ import LocationSearchPanel from "../components/LocationSearchPanel";
 import VehiclePanel from "../components/VehiclePanel";
 import ConfirmRide from "../components/ConfirmRide";
 import LookingForDriver from "../components/LookingForDriver";
+import WaitingForDriver from "../components/WaitingForDriver";
 
 const Home = () => {
   const [pickup, setPickup] = useState("");
@@ -13,11 +14,13 @@ const Home = () => {
   const [vehiclePanelOpen, setVehiclePanelOpen] = useState(false);
   const [confirmRidePanel, setConfirmRidePanel] = useState(false);
   const [vehicleFound, setVehicleFound] = useState(false);
+  const [waitingForDriver, setWaitingForDriver] = useState(false);
   const panelRef = useRef(null);
   const panelCloseRef = useRef(null);
   const vehiclePanelRef = useRef(null);
   const confirmRidePanelRef = useRef(null);
   const vehicleFoundRef = useRef(null);
+  const WaitingForDriverRef = useRef(null);
   const submitHandler = (e) => {
     e.preventDefault();
     console.log("Form submitted");
@@ -84,6 +87,17 @@ const Home = () => {
       });
     }
   }, [vehicleFound]);
+  useEffect(() => {
+    if (waitingForDriver) {
+      gsap.to(WaitingForDriverRef.current, {
+        transform: "translateY(0)",
+      });
+    } else {
+      gsap.to(WaitingForDriverRef.current, {
+        transform: "translateY(100%)",
+      });
+    }
+  }, [waitingForDriver]);
 
   return (
     <div className="relative h-screen">
@@ -165,6 +179,12 @@ const Home = () => {
         className="fixed bottom-0 z-10 w-full translate-y-full bg-gray-100 px-3 py-6 pt-14"
       >
         <LookingForDriver setVehicleFound={setVehicleFound} />
+      </div>
+      <div
+        ref={WaitingForDriverRef}
+        className="fixed bottom-0 z-10 w-full bg-gray-100 px-3 py-6 pt-14"
+      >
+        <WaitingForDriver setWaitingForDriver={setWaitingForDriver} />
       </div>
     </div>
   );
