@@ -52,7 +52,7 @@ const CaptainHome = () => {
           className="h-full w-full object-cover"
         />
       </div>
-      <div className="h-2/5 p-6">
+      <div className="h-2/5 px-2 py-6">
         <CaptainDetails />
       </div>
       <div

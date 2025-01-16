@@ -17,7 +17,7 @@ const CaptainDetails = () => {
           <p className="text-sm text-gray-600">Earned</p>
         </div>
       </div>
-      <div className="mt-6 flex items-start justify-center gap-5 rounded-xl bg-gray-100 p-3">
+      <div className="mt-6 flex items-start justify-center gap-5 rounded-xl bg-gray-100 p-2">
         <div className="text-center">
           <i className="ri-timer-2-line mb-2 text-3xl font-thin"></i>
           <h5 className="text-lg font-medium">10.2</h5>
