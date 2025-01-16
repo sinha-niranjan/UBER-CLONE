@@ -87,6 +87,7 @@ const Home = () => {
       });
     }
   }, [vehicleFound]);
+  
   useEffect(() => {
     if (waitingForDriver) {
       gsap.to(WaitingForDriverRef.current, {

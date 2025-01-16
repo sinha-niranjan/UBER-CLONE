@@ -1,26 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+import "remixicon/fonts/remixicon.css";
 
-const ConfirmRidePopUp = ({ setRidePopupPanel, setConfirmRidePopupPanel }) => {
-  const [otp, setOtp] = useState("");
-  const submitHandler = (e) => {
-    e.preventDefault();
-  };
+const FinishRide = ({ setFinishRidePanel }) => {
   return (
     <div>
       <h5
         onClick={() => {
-          setConfirmRidePopupPanel((prev) => !prev);
-          setRidePopupPanel(true);
+          setFinishRidePanel(false);
         }}
         className="absolute top-0 w-[93%] p-3 text-center"
       >
         <i className="ri-arrow-down-wide-line text-3xl text-gray-300"></i>
       </h5>
-      <h3 className="mb-5 text-2xl font-semibold">
-        Confirm this ride to Start !
-      </h3>
-      <div className="mt-4 flex items-center justify-between rounded-lg bg-yellow-300 p-3">
+      <h3 className="mb-5 text-2xl font-semibold">Finish this Ride !</h3>
+      <div className="mt-4 flex items-center justify-between rounded-lg border-2 border-yellow-400 p-3">
         <div className="flex items-center gap-3">
           <img
             src="person2.jpg"
@@ -61,44 +55,17 @@ const ConfirmRidePopUp = ({ setRidePopupPanel, setConfirmRidePopupPanel }) => {
             </div>
           </div>
         </div>
-        <div className="mt-6 flex w-full flex-col gap-3 p-2">
-          <form
-            onSubmit={(e) => {
-              submitHandler(e);
-            }}
+        <div className="mt-10 flex w-full flex-col gap-3 p-2">
+          <Link
+            to={"/captain-home"}
+            className="mt-5 flex w-full items-center justify-center rounded-lg bg-green-500 p-3 text-lg font-semibold text-white"
           >
-            <div className="flex w-full items-center justify-between gap-4">
-              <input
-                type="text"
-                placeholder="Enter OTP"
-                className="w-2/3 rounded-lg bg-gray-300 px-12 py-2 font-mono text-base"
-                value={otp}
-                onChange={(e) => setOtp(e.target.value)}
-              />
-              <h4 className="flex w-1/3 items-center justify-center rounded-lg bg-yellow-400 py-2 font-semibold">
-                OTP
-              </h4>
-            </div>
-            <Link
-              to={"/captain-riding"}
-              className="mt-5 flex w-full items-center justify-center rounded-lg bg-green-500 p-3 text-lg font-semibold text-white"
-            >
-              Confirm
-            </Link>{" "}
-            <button
-              onClick={() => {
-                setConfirmRidePopupPanel((prev) => !prev);
-                setRidePopupPanel(false);
-              }}
-              className="mt-2 w-full rounded-lg bg-red-500 p-3 text-lg font-semibold text-white"
-            >
-              Cancel
-            </button>
-          </form>
+            Finish Ride
+          </Link>
         </div>
       </div>
     </div>
   );
 };
 
-export default ConfirmRidePopUp;
+export default FinishRide;
